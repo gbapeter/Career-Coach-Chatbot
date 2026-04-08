@@ -28,12 +28,12 @@ model = genai.GenerativeModel(MODEL_NAME)
 CHROMA_DIR = "./chroma_db"
 
 # Unzip chroma_db
-if not os.path.exists(CHROMA_DIR):
-    with zipfile.ZipFile("chroma_db.zip", "r") as zip_ref:
-        zip_ref.extractall(".")
 # if not os.path.exists(CHROMA_DIR):
-#     from ingest import ingest
-#     ingest()
+#     with zipfile.ZipFile("chroma_db.zip", "r") as zip_ref:
+#         zip_ref.extractall(".")
+if not os.path.exists(CHROMA_DIR):
+    from ingest import ingest
+    ingest()
 # if not os.path.exists(CHROMA_DIR):
 #     st.error("Knowledge base not found. Please run ingestion locally and upload chroma_db.")
 #     st.stop()
